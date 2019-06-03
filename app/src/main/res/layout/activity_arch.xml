@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="usermodel"
+                type="com.architecture.jetpack.arch.databinding.User"/>
+
+
+        <variable
+                name="myAdapter"
+                type="com.architecture.jetpack.arch.databinding.HomeAdapter"/>
+
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context="com.architecture.jetpack.arch.databinding.Arch">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="@{usermodel.firstname}"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="1"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textAlignment="center"
+                    android:text="@{usermodel.lastname}"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adapter="@{myAdapter}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    </LinearLayout>
+</layout>
